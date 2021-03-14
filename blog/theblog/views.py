@@ -28,7 +28,7 @@ class UpdatePostView(UpdateView):
     form_class = EditForm
     #fields = ['title', 'title_tag', 'body']
 
-class DeletePostView(UpdateView):
+class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
