@@ -22,6 +22,10 @@ class AddBlog(CreateView):
     form_class = PostForm
     template_name = 'add_post.html'
 
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats)
+    return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
+
 class AddCategory(CreateView):
     model = Category
     #form_class = PostForm
