@@ -8,7 +8,7 @@
             <a href="{% url 'article-detail' post.pk %}">
                 {{ post.title }}
             </a>
-            - {{ post.category }}
+            - <a href="{% url 'category' post.category %}">{{ post.category }}</a>
             - {{ post.author.first_name }}
             {{ post.author.last_name }}
             <small>
