@@ -13,6 +13,10 @@
         {{ form.as_p }}
         <button class="btn btn-secondary">Post</button>
     </form>
+    <script>
+        var name = "{{ user.id }}";
+        document.getElementById("mohsin").value = name;
+    </script>
 {% else %}
     You're not allowed nigga!
 {% endif %}
