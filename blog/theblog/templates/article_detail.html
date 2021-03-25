@@ -29,5 +29,10 @@ post author: {{ post.author.id }}
 <br><br>
 
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<br><br>
+<form action="{% url 'like_post' post.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-sm" value="{{ post.id }}" name="post_id">Like</button> - {{ total_likes }} likes
+</form>
 
 {% endblock content %}
